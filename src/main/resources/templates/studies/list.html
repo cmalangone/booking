@@ -1,0 +1,40 @@
+
+
+<html layout:decorator="layout">
+
+<div layout:fragment="content">
+<a class="btn btn-primary" href="/studies/new">Add new study</a>
+
+<table class="table table-striped" id="studies_list">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr data-th-each="study : ${studies}">
+        <td class="message" data-th-text="${study.id}"></td>
+        <td class="message" data-th-text="${study.name}"></td>
+        <td>
+            <a th:href="@{'/studies/{id}/delete'(id=${study.id})}" class="delete" th:attr="name=${study.name}">
+                        <span class="fa-stack">
+                            <i class="glyphicon glyphicon-trash"></i>
+                        </span>
+            </a>
+        </td>
+
+        <td>
+            <a th:href="@{'/studies/{id}/edit'(id=${study.id})}" class="edit" th:attr="name=${study.name}">
+                    <span class="fa-stack">
+                        <i class="glyphicon glyphicon-edit"></i>
+                    </span>
+
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+    </div>
+</html>
