@@ -1,0 +1,1 @@
+create index idx_study_name on studies (name);
