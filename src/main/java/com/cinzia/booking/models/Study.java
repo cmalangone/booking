@@ -5,6 +5,7 @@ package com.cinzia.booking.models;
  */
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 import lombok.*;
@@ -21,7 +22,6 @@ public class Study {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-
     private String name;
 
     public Study(){
@@ -30,6 +30,8 @@ public class Study {
     public Study(String name){
         this.name = name;
     }
+
+
 
     public long getId() {
         return id;
